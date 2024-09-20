@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MultiPovig.iml" filepath="$PROJECT_DIR$/MultiPovig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThreads.iml" filepath="$PROJECT_DIR$/MultiThreads.iml" />
     </modules>
   </component>
 </project>
