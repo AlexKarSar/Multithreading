@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +10,9 @@ public class Main {
     public static void main(String[] args) {
         int choice = 1;
 
+        System.out.println("Введите номер задания:");
 
         while (true) {
-            System.out.println("Введите номер задания:");
             Scanner sc = new Scanner(System.in);
             choice = sc.nextInt();
             switch (choice) {
@@ -79,6 +81,20 @@ public class Main {
                     timerThread.start();
                     fiveSecondThread.start();
                     sevenSecondThread.start();
+                }
+                case 4->{
+                    System.out.println("Задание №4. Дано два потока — производитель и потребитель. Производитель генерирует некоторые данные (в примере — числа). Производитель «потребляет» их\nВведите размер буфера: ");
+                    int buffSize = sc.nextInt();
+                    Queue<Integer> queue = new LinkedList<>();
+                    System.out.println("Введите производительность 'Производителя' (int/сек):");
+                    int sec = sc.nextInt();
+                    Producer pr = new Producer(queue, sec,buffSize);
+                    System.out.println("Введите производительность 'Потребителя' (int/сек):");
+                    ConsumerThread consumerThread = new ConsumerThread(queue, sc.nextInt());
+
+                    pr.start();
+                    consumerThread.start();
+
                 }
             }
 
